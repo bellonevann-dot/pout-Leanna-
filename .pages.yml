@@ -1,0 +1,42 @@
+
+media:
+  - name: images
+    label: Photos
+    input: media/images
+    output: /media/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, gif]
+  - name: videos
+    label: Vidéos
+    input: media/videos
+    output: /media/videos
+    categories: [video]
+    extensions: [mp4, webm, mov]
+
+content:
+  - name: letter
+    label: Ma lettre pour Leanna
+    type: file
+    path: content/letter.json
+    format: json
+    fields:
+      - name: title
+        label: Titre de la lettre
+        type: string
+      - name: greeting
+        label: Petite phrase d'introduction
+        type: string
+      - name: message
+        label: Message d'excuses
+        type: text
+      - name: signature
+        label: Signature
+        type: string
+      - name: photos
+        label: Photos à afficher
+        type: image
+        list: true
+      - name: videos
+        label: Vidéos à afficher
+        type: string
+        list: true
