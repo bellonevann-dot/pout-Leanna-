@@ -12,7 +12,33 @@ body{
  margin:0;font-family:Georgia,serif;color:var(--dark);
  background:linear-gradient(135deg,#fff0f5,#fbd5e4,#fff8fb);
  min-height:100vh;padding:25px 14px;
+}<audio id="musiqueFond" loop>
+  <source src="./musique.mp3" type="audio/mpeg">
+</audio>
+
+<button id="boutonMusique" onclick="gererMusique()"
+style="position:fixed;top:15px;right:15px;z-index:9999;
+border:0;border-radius:25px;padding:12px;background:#ffc1d6;">
+  🎵 Activer la musique
+</button>
+
+<script>
+const musique = document.getElementById("musiqueFond");
+const bouton = document.getElementById("boutonMusique");
+
+function gererMusique() {
+  if (musique.paused) {
+    musique.play().then(() => {
+      bouton.textContent = "🔊 Couper la musique";
+    }).catch(() => {
+      bouton.textContent = "🎵 Réessayer";
+    });
+  } else {
+    musique.pause();
+    bouton.textContent = "🎵 Activer la musique";
+  }
 }
+</script>
 main{max-width:650px;margin:auto;text-align:center}
 h1{font-size:clamp(2rem,7vw,3rem);margin:12px 0}
 p{line-height:1.8}
