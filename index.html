@@ -112,7 +112,14 @@ id="message">
    <h3 style="text-align:center">Nos souvenirs 📸</h3>
    <p class="small" style="text-align:center">
     Les photos et vidéos que tu veux garder
-    <img src="leanna.jpg" alt="Nous deux" class="photo">
+    <img style=.photo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  margin: 20px auto;
+}src="leanna.jpg" alt="Nous deux" class="photo">
    </p>
    <input type="file" id="mediaPicker" accept="image/*,video/*" multiple>
    <p class="small">Choisis des photos ou vidéos sur ton appareil.
